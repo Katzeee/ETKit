@@ -7,8 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160AAEC42718B9FC00223AAD /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160AAEC32718B9FB00223AAD /* ViewModifiers.swift */; };
+		160AAEC627193CFA00223AAD /* WordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160AAEC527193CFA00223AAD /* WordData.swift */; };
+		160AAEDA2719E7AC00223AAD /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160AAECC2719E54D00223AAD /* Realm.xcframework */; };
+		160AAEDB2719E7AC00223AAD /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 160AAECC2719E54D00223AAD /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		160AAEDC2719E7AC00223AAD /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160AAED02719E55000223AAD /* RealmSwift.xcframework */; };
+		160AAEDD2719E7AC00223AAD /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 160AAED02719E55000223AAD /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		160AAEE02719F35E00223AAD /* AllWordsAndAddWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160AAEDF2719F35E00223AAD /* AllWordsAndAddWordModel.swift */; };
+		160AAF08271ABB5300223AAD /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160AAF07271ABB5300223AAD /* UserInfo.swift */; };
+		160AAF0A271ABFB300223AAD /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160AAF09271ABFB300223AAD /* DataBaseManager.swift */; };
+		160AAF0E271AF12500223AAD /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160AAF0D271AF12500223AAD /* DiaryView.swift */; };
+		1659486B2721B7BE008CE732 /* ReviewWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659486A2721B7BE008CE732 /* ReviewWordsView.swift */; };
+		1659486D2721B871008CE732 /* ReviewWordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1659486C2721B871008CE732 /* ReviewWordsModel.swift */; };
 		167C77082718A43600DC6923 /* ETKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77072718A43600DC6923 /* ETKitApp.swift */; };
-		167C770A2718A43600DC6923 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77092718A43600DC6923 /* ContentView.swift */; };
+		167C770A2718A43600DC6923 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77092718A43600DC6923 /* MainView.swift */; };
 		167C770C2718A43D00DC6923 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167C770B2718A43D00DC6923 /* Assets.xcassets */; };
 		167C770F2718A43D00DC6923 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167C770E2718A43D00DC6923 /* Preview Assets.xcassets */; };
 		167C77132718A43D00DC6923 /* ETKit WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 167C77122718A43D00DC6923 /* ETKit WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -21,6 +33,10 @@
 		167C772B2718A44100DC6923 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C772A2718A44100DC6923 /* ComplicationController.swift */; };
 		167C772D2718A44500DC6923 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167C772C2718A44500DC6923 /* Assets.xcassets */; };
 		167C77302718A44500DC6923 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167C772F2718A44500DC6923 /* Preview Assets.xcassets */; };
+		167C77412718ACF100DC6923 /* ViewNavigationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77402718ACF000DC6923 /* ViewNavigationData.swift */; };
+		167C77432718B0F500DC6923 /* MainViewNavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77422718B0F500DC6923 /* MainViewNavigationModel.swift */; };
+		167C77452718B3D100DC6923 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77442718B3D100DC6923 /* AddWordView.swift */; };
+		16BEFA34271C310800FAD0F5 /* AllWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEFA33271C310800FAD0F5 /* AllWordsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +57,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		160AAEDE2719E7AC00223AAD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				160AAEDB2719E7AC00223AAD /* Realm.xcframework in Embed Frameworks */,
+				160AAEDD2719E7AC00223AAD /* RealmSwift.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		167C77382718A44600DC6923 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,9 +94,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		160AAEC32718B9FB00223AAD /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		160AAEC527193CFA00223AAD /* WordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordData.swift; sourceTree = "<group>"; };
+		160AAECC2719E54D00223AAD /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = "../../../Downloads/realm-swift-10.17.0/13.0/Realm.xcframework"; sourceTree = "<group>"; };
+		160AAED02719E55000223AAD /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = "../../../Downloads/realm-swift-10.17.0/13.0/RealmSwift.xcframework"; sourceTree = "<group>"; };
+		160AAED32719E72600223AAD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Downloads/realm-swift-10.17.0/12.2/Realm.xcframework/ios-arm64_armv7/Realm.framework"; sourceTree = "<group>"; };
+		160AAED72719E72F00223AAD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Downloads/realm-swift-10.17.0/12.2/RealmSwift.xcframework/ios-arm64_armv7/RealmSwift.framework"; sourceTree = "<group>"; };
+		160AAEDF2719F35E00223AAD /* AllWordsAndAddWordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWordsAndAddWordModel.swift; sourceTree = "<group>"; };
+		160AAF07271ABB5300223AAD /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		160AAF09271ABFB300223AAD /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		160AAF0D271AF12500223AAD /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		1659486A2721B7BE008CE732 /* ReviewWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWordsView.swift; sourceTree = "<group>"; };
+		1659486C2721B871008CE732 /* ReviewWordsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWordsModel.swift; sourceTree = "<group>"; };
 		167C77042718A43600DC6923 /* ETKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167C77072718A43600DC6923 /* ETKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETKitApp.swift; sourceTree = "<group>"; };
-		167C77092718A43600DC6923 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		167C77092718A43600DC6923 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		167C770B2718A43D00DC6923 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		167C770E2718A43D00DC6923 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		167C77122718A43D00DC6923 /* ETKit WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ETKit WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +123,10 @@
 		167C772F2718A44500DC6923 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		167C77312718A44500DC6923 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		167C77322718A44500DC6923 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		167C77402718ACF000DC6923 /* ViewNavigationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNavigationData.swift; sourceTree = "<group>"; };
+		167C77422718B0F500DC6923 /* MainViewNavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewNavigationModel.swift; sourceTree = "<group>"; };
+		167C77442718B3D100DC6923 /* AddWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordView.swift; sourceTree = "<group>"; };
+		16BEFA33271C310800FAD0F5 /* AllWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWordsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +134,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160AAEDA2719E7AC00223AAD /* Realm.xcframework in Frameworks */,
+				160AAEDC2719E7AC00223AAD /* RealmSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +149,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160AAECB2719E54D00223AAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				160AAED72719E72F00223AAD /* RealmSwift.framework */,
+				160AAED32719E72600223AAD /* Realm.framework */,
+				160AAED02719E55000223AAD /* RealmSwift.xcframework */,
+				160AAECC2719E54D00223AAD /* Realm.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		160AAF05271A139200223AAD /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				160AAEC32718B9FB00223AAD /* ViewModifiers.swift */,
+			);
+			name = Extentions;
+			sourceTree = "<group>";
+		};
+		160AAF06271ABABE00223AAD /* LearningWord */ = {
+			isa = PBXGroup;
+			children = (
+				160AAEC527193CFA00223AAD /* WordData.swift */,
+				167C77442718B3D100DC6923 /* AddWordView.swift */,
+				160AAEDF2719F35E00223AAD /* AllWordsAndAddWordModel.swift */,
+				16BEFA33271C310800FAD0F5 /* AllWordsView.swift */,
+				1659486A2721B7BE008CE732 /* ReviewWordsView.swift */,
+				1659486C2721B871008CE732 /* ReviewWordsModel.swift */,
+			);
+			name = LearningWord;
+			sourceTree = "<group>";
+		};
 		167C76FB2718A43500DC6923 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +188,7 @@
 				167C77162718A43D00DC6923 /* ETKit WatchKit App */,
 				167C77212718A44100DC6923 /* ETKit WatchKit Extension */,
 				167C77052718A43600DC6923 /* Products */,
+				160AAECB2719E54D00223AAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,8 +205,15 @@
 		167C77062718A43600DC6923 /* ETKit */ = {
 			isa = PBXGroup;
 			children = (
+				160AAF09271ABFB300223AAD /* DataBaseManager.swift */,
+				160AAF07271ABB5300223AAD /* UserInfo.swift */,
+				160AAF0D271AF12500223AAD /* DiaryView.swift */,
+				160AAF06271ABABE00223AAD /* LearningWord */,
+				160AAF05271A139200223AAD /* Extentions */,
 				167C77072718A43600DC6923 /* ETKitApp.swift */,
-				167C77092718A43600DC6923 /* ContentView.swift */,
+				167C77092718A43600DC6923 /* MainView.swift */,
+				167C77402718ACF000DC6923 /* ViewNavigationData.swift */,
+				167C77422718B0F500DC6923 /* MainViewNavigationModel.swift */,
 				167C770B2718A43D00DC6923 /* Assets.xcassets */,
 				167C770D2718A43D00DC6923 /* Preview Content */,
 			);
@@ -185,6 +271,7 @@
 				167C77012718A43600DC6923 /* Frameworks */,
 				167C77022718A43600DC6923 /* Resources */,
 				167C773C2718A44600DC6923 /* Embed Watch Content */,
+				160AAEDE2719E7AC00223AAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,8 +392,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				167C770A2718A43600DC6923 /* ContentView.swift in Sources */,
+				1659486B2721B7BE008CE732 /* ReviewWordsView.swift in Sources */,
+				160AAEC627193CFA00223AAD /* WordData.swift in Sources */,
+				167C770A2718A43600DC6923 /* MainView.swift in Sources */,
+				167C77432718B0F500DC6923 /* MainViewNavigationModel.swift in Sources */,
+				160AAEE02719F35E00223AAD /* AllWordsAndAddWordModel.swift in Sources */,
+				16BEFA34271C310800FAD0F5 /* AllWordsView.swift in Sources */,
 				167C77082718A43600DC6923 /* ETKitApp.swift in Sources */,
+				1659486D2721B871008CE732 /* ReviewWordsModel.swift in Sources */,
+				160AAF0E271AF12500223AAD /* DiaryView.swift in Sources */,
+				160AAEC42718B9FC00223AAD /* ViewModifiers.swift in Sources */,
+				167C77452718B3D100DC6923 /* AddWordView.swift in Sources */,
+				160AAF0A271ABFB300223AAD /* DataBaseManager.swift in Sources */,
+				160AAF08271ABB5300223AAD /* UserInfo.swift in Sources */,
+				167C77412718ACF100DC6923 /* ViewNavigationData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

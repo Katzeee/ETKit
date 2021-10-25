@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import RealmSwift
+
+
+
 
 @main
-struct ETKitApp: App {
+struct ETKitApp: SwiftUI.App {
+
+
+	//userDefault.synchronize()
+	
+	
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
