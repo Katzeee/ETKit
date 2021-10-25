@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "32DFA5B3-202E-4636-834D-2B42230BDFE6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7FE342EE-D554-4285-A282-43D88DCFBFF4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ETKit/WordsLearning/AddWordModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "AddWordModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "7FE342EE-D554-4285-A282-43D88DCFBFF4 - 557082be6e024555"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ETKit.AddWordModel.__allocating_init() -&gt; ETKit.AddWordModel"
+                  moduleName = "ETKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pro/Documents/Swfit%20progs/ETKit/ETKit/WordsLearning/AddWordModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "7FE342EE-D554-4285-A282-43D88DCFBFF4 - a96926907089fb6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ETKit.AddWordModel.init() -&gt; ETKit.AddWordModel"
+                  moduleName = "ETKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pro/Documents/Swfit%20progs/ETKit/ETKit/WordsLearning/AddWordModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
