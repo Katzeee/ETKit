@@ -32,7 +32,7 @@ class DataBaseManager {
 		
 		realm = try! Realm()
 		realmURL = realm.configuration.fileURL!
-		print(realm.configuration.fileURL ?? "")
+//		print(realm.configuration.fileURL ?? "")
 	}
 	
 	//MARK: 初始化数据库

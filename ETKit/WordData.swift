@@ -74,7 +74,11 @@ class Word: Object, Identifiable {
 	
 	@objc dynamic var hasDoneLearning: Bool = false //是否掌握
 	@objc dynamic var learningTimes: Int = 0 //学习次数
+    @objc dynamic var rememberTimes: Int = 0 //认识次数
+    @objc dynamic var cannotRememberTimes: Int = 0 //不认识次数
 	@objc dynamic var addTime: Date = Date() //添加时间
+    @objc dynamic var hasBeenReviewedToday: Bool = false//今天是否已复习
+    //@objc dynamic var hasBeenReviewedToday: Bool = false//今天是否已复习
 	
 	override static func primaryKey() -> String? {
 		return "id"

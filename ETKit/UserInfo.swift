@@ -10,7 +10,7 @@ import SwiftUI
 struct UserInfo {
 	let userName = "X"
 //	let numbersOfAllWords = "numbersOfAllWords"
-	
+    let appLastOpenTime = "appLastOpenTime"
 }
 
 

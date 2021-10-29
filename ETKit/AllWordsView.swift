@@ -9,37 +9,41 @@ import SwiftUI
 
 struct AllWordsView: View {
 	
-	@StateObject var learnWordModel = AllWordsAndAddWordModel()
+	@StateObject var allWordsAndAddWordModel = AllWordsAndAddWordModel()
 	
 	
     var body: some View {
 		ScrollView {
 			VStack() {
-				ForEach(learnWordModel.AllWords) { word in
-					HStack {
-					
-						Text(word.word).bold().padding()
-						Spacer()
-						ForEach(word.meanings) { meaning in
-							Text(meaning.partOfSpeech + meaning.meaning).padding()
-						}
-					}
-					.frame(maxWidth: .infinity, alignment: .leading)
-					.background(Color.gray.opacity(0.15))
-					.cornerRadius(10)
-					.padding([.leading, .horizontal])
-					.contentShape(RoundedRectangle(cornerRadius: 10))
-					.contextMenu(menuItems: {
-						Button(action: {learnWordModel.DeleteWord(word)}, label: {
-							Text("Delete Word")
-						})
-						Button(action: {
-							learnWordModel.openNewPage.toggle()
-							learnWordModel.updateWordItem = word
-						}, label: {
-							Text("Update Word")
-						})
-					})
+				ForEach(allWordsAndAddWordModel.AllWords) { word in
+                    AllWordCardView(word: word)
+                        .environmentObject(allWordsAndAddWordModel)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(Color.gray.opacity(0.15))
+                        .cornerRadius(10)
+                        .padding([.leading, .horizontal])
+                        .contentShape(RoundedRectangle(cornerRadius: 10))
+                        .contextMenu(menuItems: {
+                            Button(action: {
+                                allWordsAndAddWordModel.openNewPage.toggle()
+                                allWordsAndAddWordModel.updateWordItem = word
+                            }, label: {
+                                Text("Update Word")
+                            })
+                            Button(action: {allWordsAndAddWordModel.DeleteWord(word)}, label: {
+                                Text("Delete Word")
+                            })
+                            Button(action: {allWordsAndAddWordModel.ChangeDoneLearningState(word)}, label: {
+                                HStack {
+                                    Text("Done Learning")
+                                    if !word.hasDoneLearning {
+                                        Image(systemName: "checkmark.square")
+                                    } else {
+                                        Image(systemName: "checkmark.square.fill")
+                                    }
+                                }
+                            })
+                        })
 				}
 			}
 			
@@ -47,15 +51,50 @@ struct AllWordsView: View {
 		.navigationTitle("All Words")
 		.toolbar {
 			ToolbarItem(placement: .navigationBarTrailing) {
-				Button(action: {learnWordModel.openNewPage.toggle()}) {
+				Button(action: {allWordsAndAddWordModel.openNewPage.toggle()}) {
 					Image(systemName: "plus").font(.title2)
 				}
 			}
 		}
-		.sheet(isPresented: $learnWordModel.openNewPage) {
-			AddWordView().environmentObject(learnWordModel)
+		.sheet(isPresented: $allWordsAndAddWordModel.openNewPage) {
+			AddWordView().environmentObject(allWordsAndAddWordModel)
 		}
     }
+}
+
+struct AllWordCardView: View {
+    
+    var word: Word
+    var wordMeaningString: String = ""
+    @EnvironmentObject var allWordsAndAddWordModel: AllWordsAndAddWordModel
+    
+    init(word: Word) {
+        self.word = word
+        for i in 0..<self.word.meanings.count {
+            wordMeaningString += self.word.meanings[i].partOfSpeech + " " + self.word.meanings[i].meaning + "  "
+        }
+    }
+    
+    var body: some View {
+        HStack {
+            Button(action: {allWordsAndAddWordModel.ChangeDoneLearningState(word)}, label: {
+                if !word.hasDoneLearning {
+                    Image(systemName: "checkmark.square")
+                } else {
+                    Image(systemName: "checkmark.square.fill")
+                }
+            })
+                .padding(.leading, 10)
+                .foregroundColor(.black)
+            Text(word.word)
+                .bold()
+                .padding(.vertical)
+                .padding(.leading, 5)
+            Spacer()
+            Text(wordMeaningString).padding()
+        }
+    }
+    
 }
 
 struct AllWordsView_Previews: PreviewProvider {

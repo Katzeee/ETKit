@@ -20,7 +20,16 @@ struct AddWordView: View {
 				Section("Word") {
 					TextField("Text here", text: $addWordModel.word)
 				}
-		
+                
+                Section("Language") {
+                    Picker("Language", selection: $addWordModel.language) {
+                        ForEach(WordConstantAttribute.Languages.allCases) { language in
+                            Text(language.rawValue)
+                        }
+                    }
+                }
+                
+                
 				Section("Meaning") {
 					ForEach(addWordModel.AllMeanings) { eachMeaning in
 						let index = addWordModel.FindIndexByMeaningContent(eachMeaning)
@@ -57,9 +66,18 @@ struct AddWordView: View {
 					
 				}
 				ToolbarItem(placement: .navigationBarTrailing) {
-					Button(action: {addWordModel.CommitWord(presentation: presentation)}) {
+                    Button(action: {
+                        if addWordModel.word == "" { //空单词不允许commit
+                            addWordModel.addWordAlert = true
+                        }
+                        else {
+                            addWordModel.CommitWord(presentation: presentation)
+                        }
+                    }) {
 						Text("Done")
-					}
+                    }.alert(isPresented: $addWordModel.addWordAlert) {
+                        Alert(title: Text("word cannot be blank"), message: nil, dismissButton: .default(Text("OK")))
+                    }
 					
 				}
 				
