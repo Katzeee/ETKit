@@ -9,19 +9,39 @@ import SwiftUI
 
 struct MainView: View {
     
-    //@EnvironmentObject var allWordsAndAddWordModel: AllWordsAndAddWordModel
-    
-    init() {
-        //print(allWordsAndAddWordModel.AllWords[0].word)
-    }
-    
-    
+    @ObservedObject var model = MessageSessionOnWatch()
+    @State var reachable = "No"
+    @State var messageText = ""
     var body: some View {
-        VStack {
-            Text("Hello")
+        ScrollView {
+            Toggle("isOn", isOn: $model.isOn)
+            if model.isOn {
+                Text(model.messageText)
+            }
+            Text("Reachable \(reachable)")
             
+            Button(action: {
+                if self.model.session.isReachable{
+                    self.reachable = "Yes"
+                }
+                else{
+                    self.reachable = "No"
+                }
+                
+            }) {
+                Text("Update")
+            }
+            VStack{
+                Text("phone:\(model.messageText)")
+                TextField("Input your message", text: $messageText)
+                Button(action: {
+                    self.model.session.sendMessage(["message" : self.messageText], replyHandler: {(replyMessage) in print(replyMessage)}) { (error) in
+                        print(error.localizedDescription)
+                    }
+                }
+                       , label: {Text("sendMessage")})
+            }
         }
-        
         
     }
 }

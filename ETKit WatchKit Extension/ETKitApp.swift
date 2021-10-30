@@ -2,17 +2,17 @@
 //  ETKitApp.swift
 //  ETKit WatchKit Extension
 //
-//  Created by Xi on 2021/10/15.
+//  Created by x on 2021/10/30.
 //
 
 import SwiftUI
 
 @main
-struct ETKitApp: App {
+struct WatchConnectivityApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                MainView()
             }
         }
 
