@@ -26,8 +26,7 @@
 		167C77132718A43D00DC6923 /* ETKit WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 167C77122718A43D00DC6923 /* ETKit WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		167C77182718A44100DC6923 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167C77172718A44100DC6923 /* Assets.xcassets */; };
 		167C771E2718A44100DC6923 /* ETKit WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 167C771D2718A44100DC6923 /* ETKit WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		167C77232718A44100DC6923 /* ETKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77222718A44100DC6923 /* ETKitApp.swift */; };
-		167C77252718A44100DC6923 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77242718A44100DC6923 /* ContentView.swift */; };
+		167C77252718A44100DC6923 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77242718A44100DC6923 /* MainView.swift */; };
 		167C77272718A44100DC6923 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77262718A44100DC6923 /* NotificationController.swift */; };
 		167C77292718A44100DC6923 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77282718A44100DC6923 /* NotificationView.swift */; };
 		167C772B2718A44100DC6923 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C772A2718A44100DC6923 /* ComplicationController.swift */; };
@@ -38,6 +37,11 @@
 		167C77452718B3D100DC6923 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77442718B3D100DC6923 /* AddWordView.swift */; };
 		16BEFA34271C310800FAD0F5 /* AllWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEFA33271C310800FAD0F5 /* AllWordsView.swift */; };
 		1F7C876C272C4CD7003D88B8 /* EveryDayRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7C876B272C4CD7003D88B8 /* EveryDayRefresh.swift */; };
+		1FABEE10272C62BC00DAB8E3 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160AAED02719E55000223AAD /* RealmSwift.xcframework */; };
+		1FABEE11272C62BC00DAB8E3 /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 160AAED02719E55000223AAD /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1FABEE13272C62C400DAB8E3 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160AAED02719E55000223AAD /* RealmSwift.xcframework */; };
+		1FABEE14272C62C900DAB8E3 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160AAECC2719E54D00223AAD /* Realm.xcframework */; };
+		1FABEE15272C62C900DAB8E3 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 160AAECC2719E54D00223AAD /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +96,18 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FABEE12272C62BC00DAB8E3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1FABEE11272C62BC00DAB8E3 /* RealmSwift.xcframework in Embed Frameworks */,
+				1FABEE15272C62C900DAB8E3 /* Realm.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -115,8 +131,7 @@
 		167C77122718A43D00DC6923 /* ETKit WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ETKit WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		167C77172718A44100DC6923 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		167C771D2718A44100DC6923 /* ETKit WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ETKit WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		167C77222718A44100DC6923 /* ETKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETKitApp.swift; sourceTree = "<group>"; };
-		167C77242718A44100DC6923 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		167C77242718A44100DC6923 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		167C77262718A44100DC6923 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		167C77282718A44100DC6923 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		167C772A2718A44100DC6923 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
@@ -145,6 +160,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FABEE10272C62BC00DAB8E3 /* RealmSwift.xcframework in Frameworks */,
+				1FABEE13272C62C400DAB8E3 /* RealmSwift.xcframework in Frameworks */,
+				1FABEE14272C62C900DAB8E3 /* Realm.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,8 +260,7 @@
 		167C77212718A44100DC6923 /* ETKit WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				167C77222718A44100DC6923 /* ETKitApp.swift */,
-				167C77242718A44100DC6923 /* ContentView.swift */,
+				167C77242718A44100DC6923 /* MainView.swift */,
 				167C77262718A44100DC6923 /* NotificationController.swift */,
 				167C77282718A44100DC6923 /* NotificationView.swift */,
 				167C772A2718A44100DC6923 /* ComplicationController.swift */,
@@ -310,6 +327,7 @@
 				167C77192718A44100DC6923 /* Sources */,
 				167C771A2718A44100DC6923 /* Frameworks */,
 				167C771B2718A44100DC6923 /* Resources */,
+				1FABEE12272C62BC00DAB8E3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,9 +436,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				167C77272718A44100DC6923 /* NotificationController.swift in Sources */,
-				167C77252718A44100DC6923 /* ContentView.swift in Sources */,
+				167C77252718A44100DC6923 /* MainView.swift in Sources */,
 				167C772B2718A44100DC6923 /* ComplicationController.swift in Sources */,
-				167C77232718A44100DC6923 /* ETKitApp.swift in Sources */,
 				167C77292718A44100DC6923 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,7 +581,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ETKit WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ETKit WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -596,7 +613,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ETKit WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ETKit WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (

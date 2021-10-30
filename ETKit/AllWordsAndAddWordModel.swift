@@ -23,6 +23,7 @@ class AllWordsAndAddWordModel: ObservableObject {
     @Published var language: String = WordConstantAttribute.Languages.English.rawValue
 	@Published var updateWordItem: Word?
     @Published var addWordAlert: Bool = false
+    @Published var watchOS: Bool = false
 	
 	
 	func AddOneMeaning() -> Void {
@@ -155,6 +156,13 @@ class AllWordsAndAddWordModel: ObservableObject {
     }
 	
 	init() {
+        
+        //let wordItem: Word = Word()
+        //wordItem.word = "yyy"
+        //try! realm.write {
+        //    realm.add(wordItem)
+        //}
+        
 		FetchWords()
 //		meaningsWithPartOfSpeechs.append(WordMeaning())
 		InitForNewComingWord()

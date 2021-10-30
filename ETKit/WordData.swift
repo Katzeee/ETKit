@@ -78,7 +78,10 @@ class Word: Object, Identifiable {
     @objc dynamic var cannotRememberTimes: Int = 0 //不认识次数
 	@objc dynamic var addTime: Date = Date() //添加时间
     @objc dynamic var hasBeenReviewedToday: Bool = false//今天是否已复习
-    //@objc dynamic var hasBeenReviewedToday: Bool = false//今天是否已复习
+    @objc dynamic var EFValue: Float = 2.5 //EF Easiness Factor 难易度因子 取值1.3--2.5
+    @objc dynamic var nextTimeReviewInterval: Int = 1 //下次复习间隔天数
+    @objc dynamic var nextTimeReviewIntervalRecord: Int = 1 //下次复习间隔天数,不变，用于计算下次复习天数
+    
 	
 	override static func primaryKey() -> String? {
 		return "id"

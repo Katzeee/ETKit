@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AllWordsView: View {
 	
+    //@EnvironmentObject var allWordsAndAddWordModel: AllWordsAndAddWordModel
 	@StateObject var allWordsAndAddWordModel = AllWordsAndAddWordModel()
-	
 	
     var body: some View {
 		ScrollView {
@@ -64,35 +64,43 @@ struct AllWordsView: View {
 
 struct AllWordCardView: View {
     
-    var word: Word
+    var wordItem: Word
+    var word: String
     var wordMeaningString: String = ""
+    var hasDoneLearning: Bool
     @EnvironmentObject var allWordsAndAddWordModel: AllWordsAndAddWordModel
     
-    init(word: Word) {
-        self.word = word
-        for i in 0..<self.word.meanings.count {
-            wordMeaningString += self.word.meanings[i].partOfSpeech + " " + self.word.meanings[i].meaning + "  "
+    init(word: Word?) {
+        self.wordItem = word!
+        self.word = wordItem.word
+        hasDoneLearning = wordItem.hasDoneLearning
+        for i in 0..<self.wordItem.meanings.count {
+            wordMeaningString += self.wordItem.meanings[i].partOfSpeech + " " + self.wordItem.meanings[i].meaning + "  "
         }
     }
     
     var body: some View {
-        HStack {
-            Button(action: {allWordsAndAddWordModel.ChangeDoneLearningState(word)}, label: {
-                if !word.hasDoneLearning {
-                    Image(systemName: "checkmark.square")
-                } else {
-                    Image(systemName: "checkmark.square.fill")
-                }
-            })
-                .padding(.leading, 10)
-                .foregroundColor(.black)
-            Text(word.word)
-                .bold()
-                .padding(.vertical)
-                .padding(.leading, 5)
-            Spacer()
-            Text(wordMeaningString).padding()
+        
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Button(action: {allWordsAndAddWordModel.ChangeDoneLearningState(wordItem)}, label: {
+                   if !hasDoneLearning {
+                       Image(systemName: "checkmark.square")
+                   } else {
+                       Image(systemName: "checkmark.square.fill")
+                   }
+                })
+                    .padding(.leading, 10)
+                    .foregroundColor(.black)
+                Text(word).bold().padding(.vertical).padding(.leading, 5)
+                Spacer()
+                Text(wordMeaningString).padding()
+            }
+           // Text("nextTimeReviewInterval: \(word.nextTimeReviewInterval)")
+           // Text("nextTimeReviewIntervalRecord: \(word.nextTimeReviewIntervalRecord)")
+           // Text("EFValue: \(word.EFValue)")
         }
+        
     }
     
 }

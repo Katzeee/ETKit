@@ -21,6 +21,14 @@ class EveryDayRefresh {
         try! realm.write {
             results.setValue(false, forKey: "hasBeenReviewedToday")
         }
+    }
+    func RefreshNextTimeReviewInterval() -> Void {
+        let results = realm.objects(Word.self)
         
+        try! realm.write {
+            for word in results.filter("nextTimeReviewInterval > 0") {
+                    word.nextTimeReviewInterval -= 1
+            }
+        }
     }
 }

@@ -19,6 +19,7 @@ struct ETKitApp: SwiftUI.App {
     let userDefault = UserDefaults.standard
     var currentOpenTime: String?
     var lastOpenTime: String?
+    //@StateObject var allWordsAndAddWordModel = AllWordsAndAddWordModel()
     
 
     init() {
@@ -30,13 +31,16 @@ struct ETKitApp: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                //.environmentObject(allWordsAndAddWordModel)
         }
+       
+
     }
     
     mutating func GetOpenTime() -> Void {
         let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss"
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss"
+        //formatter.dateFormat = "yyyy-MM-dd"
         
         lastOpenTime = userDefault.string(forKey: UserInfo().appLastOpenTime)
         currentOpenTime = formatter.string(from: Date())
@@ -46,6 +50,7 @@ struct ETKitApp: SwiftUI.App {
     func CheckIsAnotherDay() -> Void {
         if lastOpenTime! != currentOpenTime! {
             everyDayRefresh.RefreshHasBeenReviewedTodayState()
+            everyDayRefresh.RefreshNextTimeReviewInterval()
         }
     }
 }

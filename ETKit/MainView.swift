@@ -12,6 +12,7 @@ struct MainView: View {
 	
 	var mainViewNavigationModel = MainViewNavigationModel() //初始化导航管理
 	
+    //@EnvironmentObject var allWordsAndAddWordModel: AllWordsAndAddWordModel
 	
 	
     var body: some View {
