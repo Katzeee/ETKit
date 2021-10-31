@@ -37,9 +37,12 @@
 		167C77452718B3D100DC6923 /* AddWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167C77442718B3D100DC6923 /* AddWordView.swift */; };
 		16BEFA34271C310800FAD0F5 /* AllWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEFA33271C310800FAD0F5 /* AllWordsView.swift */; };
 		1F7C876C272C4CD7003D88B8 /* EveryDayRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7C876B272C4CD7003D88B8 /* EveryDayRefresh.swift */; };
-		1F9A5294272D3E7C006F8947 /* ETKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A5293272D3E7C006F8947 /* ETKitApp.swift */; };
 		1F9A5299272D6626006F8947 /* MessageSessionOnPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A5298272D6626006F8947 /* MessageSessionOnPhone.swift */; };
 		1F9A529B272D671C006F8947 /* MessageSessionOnWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A529A272D671C006F8947 /* MessageSessionOnWatch.swift */; };
+		1F9A52A1272D92E5006F8947 /* DeliverWordsToWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A52A0272D92E5006F8947 /* DeliverWordsToWatch.swift */; };
+		1F9A52A5272D9607006F8947 /* ETKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A5293272D3E7C006F8947 /* ETKitApp.swift */; };
+		1F9A52A8272D995D006F8947 /* WordDataForWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A52A7272D995D006F8947 /* WordDataForWatch.swift */; };
+		1F9A52AA272D9A2A006F8947 /* WordDataForWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A52A7272D995D006F8947 /* WordDataForWatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +137,8 @@
 		1F9A5298272D6626006F8947 /* MessageSessionOnPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSessionOnPhone.swift; sourceTree = "<group>"; };
 		1F9A529A272D671C006F8947 /* MessageSessionOnWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSessionOnWatch.swift; sourceTree = "<group>"; };
 		1F9A529F272D8E0F006F8947 /* ETKit WatchKit Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ETKit WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		1F9A52A0272D92E5006F8947 /* DeliverWordsToWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliverWordsToWatch.swift; sourceTree = "<group>"; };
+		1F9A52A7272D995D006F8947 /* WordDataForWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDataForWatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +191,7 @@
 				1659486A2721B7BE008CE732 /* ReviewWordsView.swift */,
 				1659486C2721B871008CE732 /* ReviewWordsModel.swift */,
 				1F7C876B272C4CD7003D88B8 /* EveryDayRefresh.swift */,
+				1F9A52A0272D92E5006F8947 /* DeliverWordsToWatch.swift */,
 			);
 			name = LearningWord;
 			sourceTree = "<group>";
@@ -251,9 +257,10 @@
 				1F9A529F272D8E0F006F8947 /* ETKit WatchKit Extension.entitlements */,
 				1F9A5293272D3E7C006F8947 /* ETKitApp.swift */,
 				167C77242718A44100DC6923 /* MainView.swift */,
-				167C77262718A44100DC6923 /* NotificationController.swift */,
-				167C77282718A44100DC6923 /* NotificationView.swift */,
 				1F9A529A272D671C006F8947 /* MessageSessionOnWatch.swift */,
+				167C77262718A44100DC6923 /* NotificationController.swift */,
+				1F9A52A7272D995D006F8947 /* WordDataForWatch.swift */,
+				167C77282718A44100DC6923 /* NotificationView.swift */,
 				167C772A2718A44100DC6923 /* ComplicationController.swift */,
 				167C772C2718A44500DC6923 /* Assets.xcassets */,
 				167C77312718A44500DC6923 /* Info.plist */,
@@ -417,6 +424,8 @@
 				167C77452718B3D100DC6923 /* AddWordView.swift in Sources */,
 				160AAF0A271ABFB300223AAD /* DataBaseManager.swift in Sources */,
 				160AAF08271ABB5300223AAD /* UserInfo.swift in Sources */,
+				1F9A52A1272D92E5006F8947 /* DeliverWordsToWatch.swift in Sources */,
+				1F9A52AA272D9A2A006F8947 /* WordDataForWatch.swift in Sources */,
 				1F9A5299272D6626006F8947 /* MessageSessionOnPhone.swift in Sources */,
 				167C77412718ACF100DC6923 /* ViewNavigationData.swift in Sources */,
 			);
@@ -428,8 +437,9 @@
 			files = (
 				167C77272718A44100DC6923 /* NotificationController.swift in Sources */,
 				167C77252718A44100DC6923 /* MainView.swift in Sources */,
+				1F9A52A5272D9607006F8947 /* ETKitApp.swift in Sources */,
 				167C772B2718A44100DC6923 /* ComplicationController.swift in Sources */,
-				1F9A5294272D3E7C006F8947 /* ETKitApp.swift in Sources */,
+				1F9A52A8272D995D006F8947 /* WordDataForWatch.swift in Sources */,
 				167C77292718A44100DC6923 /* NotificationView.swift in Sources */,
 				1F9A529B272D671C006F8947 /* MessageSessionOnWatch.swift in Sources */,
 			);

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AllWordsView: View {
 	
-    //@EnvironmentObject var allWordsAndAddWordModel: AllWordsAndAddWordModel
-	@StateObject var allWordsAndAddWordModel = AllWordsAndAddWordModel()
+    @EnvironmentObject var allWordsAndAddWordModel: AllWordsAndAddWordModel
+//	@StateObject var allWordsAndAddWordModel = AllWordsAndAddWordModel()
 	
     var body: some View {
 		ScrollView {

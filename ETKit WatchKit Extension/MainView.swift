@@ -8,6 +8,26 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var model = MessageSessionOnWatch()
+    
+    var body: some View {
+        
+        //DairyTestView()
+        VStack(spacing: 10) {
+            Text("AllWords")
+            Text(model.messageText)
+            Text(model.allWords[0].word)
+            //Text(model.oneword[0])
+            List(model.allWords) { wordItem in
+                Text(wordItem.word)
+            }
+        }
+        
+    }
+}
+
+
+struct DairyTestView: View {
     
     @ObservedObject var model = MessageSessionOnWatch()
     @State var reachable = "No"
@@ -38,11 +58,15 @@ struct MainView: View {
                     self.model.session.sendMessage(["message" : self.messageText], replyHandler: {(replyMessage) in print(replyMessage)}) { (error) in
                         print(error.localizedDescription)
                     }
-                }
-                       , label: {Text("sendMessage")})
+                }, label: {Text("sendMessage")})
+                
+                Button(action: {
+                    self.model.session.sendMessage([:], replyHandler: {(replyMessage) in print(replyMessage)}) { (error) in
+                        print(error.localizedDescription)
+                    }
+                }, label: {Text("getMessage")})
             }
         }
-        
     }
 }
 

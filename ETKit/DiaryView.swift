@@ -10,10 +10,11 @@ import SwiftUI
 struct DiaryView: View {
     
     @ObservedObject var model = MessageSessionOnPhone()
+    var deliverWordsToWatch = DeliverWordsToWatch()
     @State var reachable = "No"
     @State var messageText = "111"
     var body: some View {
-        VStack{
+        VStack(spacing: 20){
             Text("Reachable \(reachable)")
             
             Button(action: {
@@ -37,10 +38,19 @@ struct DiaryView: View {
                 } else {
                     print("not reachable")
                 }
-                
-                
-            }
-                   , label: {Text("sendMessage")})
+            }, label: {Text("sendMessage")})
+            
+            Button(action: {
+                self.model.session.transferUserInfo(["message" : self.messageText])
+            }, label: {Text("transferMessage")})
+            
+            Button(action: {
+                deliverWordsToWatch.DeliverAllWords()
+            }, label: {Text("Deliver")})
+            
+            Button(action: {
+                deliverWordsToWatch.TestDeliver()
+            }, label: {Text("TestDeliver")})
         }
         
     }

@@ -15,7 +15,8 @@ struct WatchConnectivityApp: App {
                 MainView()
             }
         }
-
+        #if os(watchOS)
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
+        #endif
     }
 }

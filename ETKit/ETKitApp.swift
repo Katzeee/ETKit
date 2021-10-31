@@ -16,10 +16,11 @@ struct ETKitApp: SwiftUI.App {
 
     var dataBaseManager = DataBaseManager() //初始化数据库管理
     var everyDayRefresh = EveryDayRefresh()
+    
     let userDefault = UserDefaults.standard
     var currentOpenTime: String?
     var lastOpenTime: String?
-    //@StateObject var allWordsAndAddWordModel = AllWordsAndAddWordModel()
+    @StateObject var allWordsAndAddWordModel = AllWordsAndAddWordModel()
     
 
     init() {
@@ -31,9 +32,11 @@ struct ETKitApp: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
             MainView()
-                //.environmentObject(allWordsAndAddWordModel)
+                .environmentObject(allWordsAndAddWordModel)
         }
-       
+        #if os(watchOS)
+        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
+        #endif
 
     }
     
