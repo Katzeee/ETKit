@@ -16,8 +16,6 @@ struct MainView: View {
         VStack(spacing: 10) {
             Text("AllWords")
             Text(model.messageText)
-            Text(model.allWords[0].word)
-            //Text(model.oneword[0])
             List(model.allWords) { wordItem in
                 Text(wordItem.word)
             }

@@ -14,8 +14,9 @@ class MessageSessionOnWatch: NSObject, WCSessionDelegate, ObservableObject {
     var session: WCSession
     @Published var messageText = "default"
     @Published var isOn = false
-    @Published var allWords: [WordForWatch] = [WordForWatch(word: "nnnn")]
+    @Published var allWords: [WordForWatch] = []
     @Published var oneword = ["chushi"]
+    var allWordsJson: [Data] = []
     
     init(session: WCSession = .default){
         self.session = session
@@ -55,18 +56,24 @@ class MessageSessionOnWatch: NSObject, WCSessionDelegate, ObservableObject {
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any])
     {
-        print("userInfo")
-        print(userInfo)
-        //print("type of:\(type(of: userInfo["allWords"]))")
+        //print("userInfo")
+        //print(userInfo)
+        self.allWords = []
         DispatchQueue.main.async {
+            
             self.messageText = userInfo["message"] as? String ?? "Unknown"
-
-            /*if case let m = Mirror(reflecting: userInfo["allWords"]) where (m.displayStyle ?? .struct) == .collection {
-                let arr = m.children.map { $0.value }
-                self.allWords = arr
-            }*/
-            self.allWords = userInfo["allWords"] as? [WordForWatch] ?? [WordForWatch(word: "转不了")]
+            self.allWordsJson = userInfo[KeysOfSharedObjects.allWords.rawValue] as? [Data] ?? []
             self.oneword = userInfo["oneWord"] as? [String] ?? ["nodui"]
+        }
+        
+        //print(self.allWordsJson)
+        for wordJson in self.allWordsJson {
+            do {
+                let wordDecoded = try wordJson.decoded() as WordForWatch
+                self.allWords.append(wordDecoded)
+            } catch {
+                print(error)
+            }
         }
     }
     
@@ -75,10 +82,7 @@ class MessageSessionOnWatch: NSObject, WCSessionDelegate, ObservableObject {
     }
     
     private func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-        print(applicationContext)
-        DispatchQueue.main.async {
-            self.allWords = applicationContext["allWords"] as? [WordForWatch] ?? [WordForWatch(word: "转不了")]
-        }
+        
     }
     
     //func session(_ session: WCSession, )

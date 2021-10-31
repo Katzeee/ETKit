@@ -11,32 +11,45 @@ import Foundation
 class DeliverWordsToWatch {
    
     let allWordsAndAddWordModel = AllWordsAndAddWordModel()
-    let model = MessageSessionOnPhone()
+    let messageSessionOnPhone = MessageSessionOnPhone()
+
     var allWordsForWatch: [WordForWatch] = []
+    var allWordsForWatchJSON: [Data] = []
     var allWordItemsWord: [String] = []
 
     
     func DeliverAllWords() -> Void {
         allWordsForWatch = []
-        //print(allWordsAndAddWordModel.AllWords)
-        for i in 0..<allWordsAndAddWordModel.AllWords.count {
-            allWordItemsWord.append(allWordsAndAddWordModel.AllWords[i].word)
-            allWordsForWatch.append(
-                WordForWatch(id: allWordsAndAddWordModel.AllWords[i].id
-                             , word: allWordsAndAddWordModel.AllWords[i].word))
-        }
-        print(allWordsForWatch)
         
-        model.session.transferUserInfo(["message" : allWordsForWatch[1].word, "oneWord" : allWordItemsWord])
-        //model.session.transferUserInfo(["allWords" : allWordsForWatch])
-        //try! model.session.updateApplicationContext(["allWords" : allWordsForWatch])
+        for i in 0..<allWordsAndAddWordModel.AllWords.count {
+            
+            allWordItemsWord.append(allWordsAndAddWordModel.AllWords[i].word)
+            
+            allWordsForWatch.append(
+                WordForWatch(id: allWordsAndAddWordModel.AllWords[i].id,
+                             word: allWordsAndAddWordModel.AllWords[i].word,
+                            meanings: "还没有写"))
+            
+            do {
+                try allWordsForWatchJSON.append(allWordsForWatch[i].encoded())
+            } catch {
+                print(error)
+            }
+            
+        }
+        
+        print(allWordsForWatchJSON)
+
+
+        messageSessionOnPhone.session.transferUserInfo(["message" : allWordsForWatch[1].word, "oneWord" : allWordItemsWord, KeysOfSharedObjects.allWords.rawValue: allWordsForWatchJSON])
+
+    
         
     }
     
     func TestDeliver() -> Void {
-        model.session.transferUserInfo(["allWords" : [WordForWatch(word: "test1"), WordForWatch(word: "test2")]])
         do {
-            try model.session.updateApplicationContext(["allWords" : allWordsForWatch])
+            try messageSessionOnPhone.session.updateApplicationContext(["allWords" : allWordsForWatch])
         } catch {
             print(error)
         }

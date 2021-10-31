@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct WordForWatch: Identifiable {
+struct WordForWatch: Identifiable, Codable {
     
     
     var id: UUID = UUID() //唯一id
     var word: String = "" //单词本身
-    let meanings: String = "" //单词意思,一对多的关系
+    var meanings: String = "" //单词意思,一对多的关系
 
     
 
 }
+

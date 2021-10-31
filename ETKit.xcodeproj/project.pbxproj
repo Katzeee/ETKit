@@ -43,6 +43,10 @@
 		1F9A52A5272D9607006F8947 /* ETKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A5293272D3E7C006F8947 /* ETKitApp.swift */; };
 		1F9A52A8272D995D006F8947 /* WordDataForWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A52A7272D995D006F8947 /* WordDataForWatch.swift */; };
 		1F9A52AA272D9A2A006F8947 /* WordDataForWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A52A7272D995D006F8947 /* WordDataForWatch.swift */; };
+		1F9A52AC272EE4B6006F8947 /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A52AB272EE4B6006F8947 /* JSONCoder.swift */; };
+		1F9A52AD272EE4B6006F8947 /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A52AB272EE4B6006F8947 /* JSONCoder.swift */; };
+		1F9A52B0272EFB64006F8947 /* KeysOfSharedObjectsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A52AF272EFB64006F8947 /* KeysOfSharedObjectsEnum.swift */; };
+		1F9A52B1272EFB64006F8947 /* KeysOfSharedObjectsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9A52AF272EFB64006F8947 /* KeysOfSharedObjectsEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +143,8 @@
 		1F9A529F272D8E0F006F8947 /* ETKit WatchKit Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ETKit WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		1F9A52A0272D92E5006F8947 /* DeliverWordsToWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliverWordsToWatch.swift; sourceTree = "<group>"; };
 		1F9A52A7272D995D006F8947 /* WordDataForWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDataForWatch.swift; sourceTree = "<group>"; };
+		1F9A52AB272EE4B6006F8947 /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
+		1F9A52AF272EFB64006F8947 /* KeysOfSharedObjectsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysOfSharedObjectsEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,13 +178,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		160AAF05271A139200223AAD /* Extentions */ = {
+		160AAF05271A139200223AAD /* ToolsAndExtentions */ = {
 			isa = PBXGroup;
 			children = (
 				160AAEC32718B9FB00223AAD /* ViewModifiers.swift */,
 				1F9A5298272D6626006F8947 /* MessageSessionOnPhone.swift */,
+				1F9A52AB272EE4B6006F8947 /* JSONCoder.swift */,
 			);
-			name = Extentions;
+			name = ToolsAndExtentions;
 			sourceTree = "<group>";
 		};
 		160AAF06271ABABE00223AAD /* LearningWord */ = {
@@ -199,6 +206,7 @@
 		167C76FB2718A43500DC6923 = {
 			isa = PBXGroup;
 			children = (
+				1F9A52AE272EFA66006F8947 /* Shared */,
 				167C77062718A43600DC6923 /* ETKit */,
 				167C77162718A43D00DC6923 /* ETKit WatchKit App */,
 				167C77212718A44100DC6923 /* ETKit WatchKit Extension */,
@@ -224,7 +232,7 @@
 				160AAF07271ABB5300223AAD /* UserInfo.swift */,
 				160AAF0D271AF12500223AAD /* DiaryView.swift */,
 				160AAF06271ABABE00223AAD /* LearningWord */,
-				160AAF05271A139200223AAD /* Extentions */,
+				160AAF05271A139200223AAD /* ToolsAndExtentions */,
 				167C77072718A43600DC6923 /* ETKitApp.swift */,
 				167C77092718A43600DC6923 /* MainView.swift */,
 				167C77402718ACF000DC6923 /* ViewNavigationData.swift */,
@@ -259,7 +267,6 @@
 				167C77242718A44100DC6923 /* MainView.swift */,
 				1F9A529A272D671C006F8947 /* MessageSessionOnWatch.swift */,
 				167C77262718A44100DC6923 /* NotificationController.swift */,
-				1F9A52A7272D995D006F8947 /* WordDataForWatch.swift */,
 				167C77282718A44100DC6923 /* NotificationView.swift */,
 				167C772A2718A44100DC6923 /* ComplicationController.swift */,
 				167C772C2718A44500DC6923 /* Assets.xcassets */,
@@ -276,6 +283,15 @@
 				167C772F2718A44500DC6923 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1F9A52AE272EFA66006F8947 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1F9A52A7272D995D006F8947 /* WordDataForWatch.swift */,
+				1F9A52AF272EFB64006F8947 /* KeysOfSharedObjectsEnum.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,8 +430,10 @@
 				160AAEC627193CFA00223AAD /* WordData.swift in Sources */,
 				167C770A2718A43600DC6923 /* MainView.swift in Sources */,
 				167C77432718B0F500DC6923 /* MainViewNavigationModel.swift in Sources */,
+				1F9A52AC272EE4B6006F8947 /* JSONCoder.swift in Sources */,
 				160AAEE02719F35E00223AAD /* AllWordsAndAddWordModel.swift in Sources */,
 				16BEFA34271C310800FAD0F5 /* AllWordsView.swift in Sources */,
+				1F9A52B0272EFB64006F8947 /* KeysOfSharedObjectsEnum.swift in Sources */,
 				167C77082718A43600DC6923 /* ETKitApp.swift in Sources */,
 				1659486D2721B871008CE732 /* ReviewWordsModel.swift in Sources */,
 				160AAF0E271AF12500223AAD /* DiaryView.swift in Sources */,
@@ -436,10 +454,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				167C77272718A44100DC6923 /* NotificationController.swift in Sources */,
+				1F9A52AD272EE4B6006F8947 /* JSONCoder.swift in Sources */,
 				167C77252718A44100DC6923 /* MainView.swift in Sources */,
 				1F9A52A5272D9607006F8947 /* ETKitApp.swift in Sources */,
 				167C772B2718A44100DC6923 /* ComplicationController.swift in Sources */,
 				1F9A52A8272D995D006F8947 /* WordDataForWatch.swift in Sources */,
+				1F9A52B1272EFB64006F8947 /* KeysOfSharedObjectsEnum.swift in Sources */,
 				167C77292718A44100DC6923 /* NotificationView.swift in Sources */,
 				1F9A529B272D671C006F8947 /* MessageSessionOnWatch.swift in Sources */,
 			);
